@@ -1,0 +1,30 @@
+﻿div.container-fluid {
+    width: 100%;
+}
+
+.hero > img {
+    width: 400px;
+}
+
+.grid-three-column {
+    grid-template-columns: 1fr;
+}
+
+.grid-two-auto-column {
+    grid-template-columns: repeat(1, auto);
+    justify-content: space-around;
+}
+
+footer {
+    margin: unset;
+    padding: unset;
+    padding-left: 2em;
+}
+
+footer > div {
+    margin-top: 2em;
+}
+
+footer > div > ul > li {
+    padding-left: 1em;
+}

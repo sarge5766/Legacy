@@ -1,0 +1,26 @@
+﻿@model ContactInfo
+
+<footer class="grid-three-column footer">
+    <div class="">
+        <p>Links</p>
+        <ul>
+            <li><a href="/Home/Services">Services</a></li>
+            <li><a href="/Home/PropertyManagement">Property Management</a></li>
+            <li><a href="/Home/Testimonials">Testimonials</a></li>
+            <li><a href="/Home/ContactUs">Contact Us</a></li>
+            <li><a href="/Home/AboutUs">About Us</a></li>
+            <li><a href="/Home/OurMission">Our Mission</a></li>
+        </ul>
+        @* &copy; 2024 - @ViewData["SiteTitle"] - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
+    </div>
+    <div>
+        <p>social media</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </div>
+    <div>
+       <partial name="~/Views/Partials/_Footer_ContactUs.cshtml" model="Model" />
+    </div>
+</footer>
