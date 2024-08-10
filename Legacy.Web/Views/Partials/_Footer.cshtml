@@ -3,21 +3,32 @@
 <footer class="grid-three-column footer">
     <div class="">
         <p>Links</p>
-        <ul>
-            <li><a href="/Home/Services">Services</a></li>
+        <ul class="footer-links">
+            <li><a href="/Home/Services">Services</a>
+                <ul>
+                    <li><a href="/Home/ResidentialServices">Residential Services</a></li>
+                    <li><a href="/Home/CounselingServices">Counseling Services</a></li>
+                </ul>    
+            </li>
             <li><a href="/Home/PropertyManagement">Property Management</a></li>
             <li><a href="/Home/Testimonials">Testimonials</a></li>
             <li><a href="/Home/ContactUs">Contact Us</a></li>
             <li><a href="/Home/AboutUs">About Us</a></li>
             <li><a href="/Home/OurMission">Our Mission</a></li>
+            <li><a href="/Home/Statistics">Statistics</a>
+                <ul>
+                    <li><a href="/Home/KeyStats">Key Statistics</a></li>
+                    <li><a href="/Home/Costs">Costs</a></li>
+                </ul>    
+            </li>
         </ul>
         @* &copy; 2024 - @ViewData["SiteTitle"] - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
     </div>
     <div>
         <p>social media</p>
         <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
+            <li><a href="#" class="facebook-blue"><i class="fa-brands fa-facebook facebook-blue"></i> Facebook</a></li>
+            <li><a href="#" class="twitter-blue"><i class="fa-brands fa-twitter twitter-blue"></i> Twitter</a></li>
         </ul>
     </div>
     <div>

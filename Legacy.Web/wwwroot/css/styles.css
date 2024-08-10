@@ -7,6 +7,13 @@
   --primary-bg: #588EB0;
   --primary-bg: #546570;
   --primary-bg: #9B805A;
+  --chart-green: hsl(73, 45%, 53%);
+  --chart-blue: hsl(201, 100%, 67%);
+  --chart-lite-pink: hsl(2, 100%, 93%);
+  --chart-yellow: hsl(37, 96%, 72%);
+  --chart-grey: hsl(35, 23%, 70%);
+  --facebook-blue: #1877F2;
+  --twitter-blue: #1da1f2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,12 +27,18 @@ h2 {
 
 body {
   background-color: var(--primary-bg);
+  color: hsl(223deg, 52%, 17%);
 }
 
 .container {
   background-color: #fff;
   margin-top: 6em;
   padding-top: 3em;
+  padding-bottom: 1.5em;
+}
+
+.wrapper {
+  width: 100%;
 }
 
 section {
@@ -40,6 +53,12 @@ main > section + section {
 .grid-two-column {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-content: space-around;
+}
+
+.grid-three-column-chart {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
   justify-content: space-around;
 }
 
@@ -131,6 +150,22 @@ footer > div > p {
   margin: 0;
   padding: 0;
   text-transform: uppercase;
+}
+
+.footer-links > li > ul {
+  list-style: none;
+  margin: 0;
+  margin-left: 1em;
+  padding: 0;
+}
+
+.footer-links > li > ul > li > a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-links > li > ul > li > a:hover {
+  color: #0a58ca;
 }
 
 /**********************************************************************************/
@@ -237,6 +272,24 @@ ol.flex-row.no-label {
   justify-content: space-evenly;
 }
 
+ol.small-bullets {
+  margin-top: 1em;
+  width: 400px;
+}
+
+ol.small-bullets > li {
+  height: unset;
+  padding: unset;
+}
+
+ol.small-bullets > li::before {
+  font-size: 0.75em;
+  height: 1.75em;
+  width: 1.75em;
+  padding: unset;
+  padding-left: 0.6em;
+}
+
 /**********************************************************************************/
 /* TESTIMONIALS */
 /**********************************************************************************/
@@ -266,7 +319,7 @@ ol.flex-row.no-label {
   padding-left: 2em;
 }
 
-.margin-top {
+.margin-top-two {
   margin-top: 2em;
 }
 
@@ -337,6 +390,10 @@ ol.flex-row.no-label {
   text-align: right;
 }
 
+.gap-one {
+  gap: 1em;
+}
+
 /**********************************************************************************/
 /* CONTACTUS */
 /**********************************************************************************/
@@ -350,6 +407,11 @@ ol.flex-row.no-label {
   flex-direction: row;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
 .wrapper {
   display: table;
 }
@@ -360,16 +422,60 @@ ol.flex-row.no-label {
 }
 
 .chart-wrapper {
-  height: 400px;
   position: relative;
   width: 100%;
 }
 
 .chart {
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  height: 150px;
-  position: absolute;
-  width: 150px;
+  background: conic-gradient(var(--chart-blue) var(--blueStart) var(--blueEnd), var(--chart-green) var(--greenStart) var(--greenEnd), var(--chart-yellow) var(--yellowStart) var(--yellowEnd), var(--chart-grey) var(--greyStart) var(--greyEnd), var(--chart-lite-pink) var(--litePinkStart));
+}
+
+.chart-legend {
+  border: 2px solid #000;
+  height: min-content;
+  margin-top: 2em;
+}
+
+.chart-legend > ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: unset;
+}
+
+.chart-legend > ul > li {
+  padding: 1em 1em 0 1em;
+}
+
+.chart-green {
+  background-color: var(--chart-green);
+}
+
+.chart-blue {
+  background-color: var(--chart-blue);
+}
+
+.chart-lite-pink {
+  background-color: var(--chart-lite-pink);
+}
+
+.chart-yellow {
+  background-color: var(--chart-yellow);
+}
+
+.chart-grey {
+  background-color: var(--chart-grey);
+}
+
+.circle {
+  border-radius: 50%;
+  display: inline-block;
+  height: 25px;
+  margin-right: 0.5em;
+  width: 25px;
 }
 
 .disabled {
@@ -397,9 +503,23 @@ ol.flex-row.no-label {
 }
 
 /*hsl(35, 23%, 70%)*/
+/**********************************************************************************/
+/* COLORS */
+/**********************************************************************************/
+.facebook-blue {
+  color: var(--facebook-blue);
+}
+
+.twitter-blue {
+  color: var(--twitter-blue);
+}
+
 @media screen and (max-width: 480px) {
   div.container-fluid {
     width: 100%;
+  }
+  .logo {
+    text-align: center;
   }
   .hero > img {
     width: 400px;
@@ -422,4 +542,38 @@ ol.flex-row.no-label {
   footer > div > ul > li {
     padding-left: 1em;
   }
+  /**********************************************************************************/
+  /* COSTS */
+  /**********************************************************************************/
+  .grid-three-column-center, .grid-two-column {
+    grid-template-columns: auto;
+  }
+  .padding-top-two {
+    padding: unset;
+  }
+  .grid-three-column-chart {
+    grid-template-columns: auto;
+  }
+  .chart-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  section > p.small {
+    margin-top: 2em;
+  }
 }
+/*
+.percentage:after {
+    content: "";
+    display: block;
+    background-color: #3d9970;
+}
+
+.percentage-20:after {
+    width: 20%;
+}
+
+.percentage-30:after {
+    width: 30%;
+}
+*/

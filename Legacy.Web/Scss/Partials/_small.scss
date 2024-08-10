@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+.logo {
+    text-align: center;
+}
+
 .hero > img {
     width: 400px;
 }
@@ -27,4 +31,28 @@ footer > div {
 
 footer > div > ul > li {
     padding-left: 1em;
+}
+
+/**********************************************************************************/
+/* COSTS */
+/**********************************************************************************/
+.grid-three-column-center, .grid-two-column {
+    grid-template-columns: auto;
+}
+
+.padding-top-two {
+    padding: unset;
+}
+
+.grid-three-column-chart {
+    grid-template-columns: auto;
+}
+
+.chart-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+section > p.small {
+    margin-top: 2em;
 }

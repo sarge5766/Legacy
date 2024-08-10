@@ -1,18 +1,65 @@
 ﻿@model ContactInfo
 
-<section>
-    <h2>Key Statistics</h2>
-</section>
+<div class="wrapper">
+    <section>
+        <h2>Key Statistics</h2>
+    </section>
 
-<section class="grid-three-column">
-    <div class="center chart-wrapper">
-        <div>Disabled (Adults & HoH) Chart</div>
-        <div class="chart disabled"></div>
-        <div class="chart non-disabled"></div>
-        <div class="chart no-answer"></div>
-        <div class="chart client-doesnt-know"></div>
-        <div class="chart client-prefers-not-to-answer"></div>
-    </div>
-    <div></div>
-    <div></div>
-</section>
+    <section class="grid-three-column-chart gap-one">
+        <div>
+            <h2>Beech Street Shelter <br />and Engagement Center</h2>
+
+            <ul>
+                <li>Disabled: 82%</li>
+                <li>Chronic Health: 38%</li>
+                <li>Physical Disability: 40%</li>
+                <li>Mental Health: 56%</li>
+                <li>Substance Use: 48%</li>
+                <li>No Income: 50%</li>
+                <li>Income under 20K: 34%</li>
+            </ul>
+
+
+        </div>
+        <div>
+            <div class="center">Disabled (Adults & HoH) Chart</div>
+
+            <div class="flex">
+                <div class="chart-wrapper">
+                    <div class="chart">&nbsp;</div>
+                </div>
+
+                <div class="chart-legend">
+                    <ul>
+                        <li><span class="circle chart-blue">&nbsp;</span><span class="chart-no"></span>No</li>
+                        <li><span class="circle chart-green">&nbsp;</span><span class="chart-yes"></span>Yes</li>
+                        <li><span class="circle chart-yellow">&nbsp;</span><span class="chart-client-doesnt-know"></span>Client doesn't know</li>
+                        <li><span class="circle chart-grey">&nbsp;</span><span class="chart-client-prefers-not-to-say"></span>Client prefers not to say</li>
+                        <li><span class="circle chart-lite-pink">&nbsp;</span><span class="chart-no-answer"></span>No Answer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>Key Stats</h3>
+
+            <ol class="small-bullets">
+                <li>50% have an income</li>
+                <li>50% need some level of substance related treatment</li>
+                <li>56% need readily available mental health services</li>
+                <li>60% of people utilizing a shelter don't want to be at the shelter</li>
+            </ol>
+
+            <div class="center margin-top-two">
+                <img src="/images/keystats-banner.png" alt="Woman talking on phone" title="Woman talking on phone" />
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <p class="small">
+            Manchester, Dept. of Housing Stability:<br />
+            Data Presentation 3/2024
+        </p>
+    </section>
+</div>
