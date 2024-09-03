@@ -1,0 +1,32 @@
+﻿@model ContactInfo
+
+@{
+    Layout = "~/Views/Shared/_Presentation.cshtml";
+    ViewData["Title"] = "Presentation";
+}
+
+<div class="inner-presentation">
+    <div class="inner-presentation-grid">
+        <div>
+            <img src="/images/social-stability-small.png" />
+        </div>
+        <div>
+            <h3>Social Stability</h3>
+
+            <ol>
+                <li>Housing Stability</li>
+                <li>Income Stability</li>
+                <li>Emotional Stability</li>
+                <li>Perpetual Housing Opportunities</li>
+                <li>Continuous Support Services</li>
+            </ol>
+        </div>       
+    </div>
+
+    <div class="presentation-footer-wrapper">
+        <div class="presentation-footer">
+            <div class="left">Permanent Housing</div>
+            <div class="right"><a asp-action="Presentation" asp-controller="Home"><- Previous</a> <a asp-action="PresentationPageThree" asp-controller="Home">Next -></a></div>
+        </div>
+    </div>
+</div>

@@ -7,6 +7,7 @@
   --primary-bg: #588EB0;
   --primary-bg: #546570;
   --primary-bg: #9B805A;
+  --primary-bg: hsl(211, 38%, 55%);
   --chart-green: hsl(73, 45%, 53%);
   --chart-blue: hsl(201, 100%, 67%);
   --chart-lite-pink: hsl(2, 100%, 93%);
@@ -14,6 +15,8 @@
   --chart-grey: hsl(35, 23%, 70%);
   --facebook-blue: #1877F2;
   --twitter-blue: #1da1f2;
+  --blue: hsl(223, 52%, 17%);
+  --off-white: hsl(42, 14%, 86%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,6 +31,48 @@ h2 {
 body {
   background-color: var(--primary-bg);
   color: hsl(223deg, 52%, 17%);
+}
+
+.grid {
+  align-items: center;
+  display: grid;
+  font-weight: bold;
+  grid-template-columns: repeat(2, auto);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.grid > div {
+  font-size: 1.25em;
+  padding-right: 1em;
+  text-align: right;
+}
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+a.logo-text {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+img.logo {
+  aspect-ratio: 1/1;
+  height: 100px;
+  object-fit: cover;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
 }
 
 .container {
@@ -111,6 +156,51 @@ main > section + section {
   width: 200px;
 }
 
+.navbar-nav {
+  align-items: center;
+  flex-direction: row;
+}
+
+.nav-item > a {
+  color: var(--blue);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.bg-light {
+  background-color: #fff !important;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.navbar-toggler {
+  border-color: #000;
+}
+
+.navbar-toggler-icon {
+  color: #000 !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%283, 152, 158, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.show > ul.navbar-nav {
+  flex-direction: column;
+}
+
+.box-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.wrapper {
+  height: 100px;
+  position: relative;
+  width: 100%;
+}
+
 .banner > img {
   object-fit: cover;
   width: 1200px;
@@ -119,6 +209,10 @@ main > section + section {
 .navbar-brand {
   font-size: 1em;
   text-transform: uppercase;
+}
+
+.text-align-right {
+  text-align: right;
 }
 
 .costs > div > ul {
@@ -577,3 +671,120 @@ ol.small-bullets > li::before {
     width: 30%;
 }
 */
+.presentation-container {
+  background-color: #fff;
+  margin-top: 6em;
+  padding-top: 3em;
+  padding-bottom: 0;
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1320px;
+}
+
+.presentation {
+  display: grid;
+  margin-top: -15px;
+  padding: 0;
+  position: relative;
+  /*height: 825px;*/
+}
+
+.inner-presentation {
+  margin-top: -75px;
+}
+
+.presentation > div {
+  border-left: 1px solid #000;
+  /*height: 550px;*/
+}
+
+.presentation-grid {
+  align-items: center;
+  display: grid;
+  font-weight: bold;
+  grid-template-columns: repeat(2, auto);
+  height: 525px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.presentation-grid > div {
+  font-size: 1.25em;
+  padding-right: 0;
+  text-align: right;
+}
+
+.inner-presentation-grid {
+  align-items: center;
+  display: grid;
+  font-weight: bold;
+  grid-template-columns: repeat(2, auto);
+  height: 725px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.inner-presentation-grid > div {
+  font-size: 1.25em;
+}
+
+.presentation > div:first-child {
+  align-content: center;
+  padding-left: 2em;
+}
+
+.presentation-footer-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.presentation-footer {
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  height: 75px;
+  position: absolute;
+  width: 100%;
+}
+
+.presentation-footer > div {
+  align-content: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  z-index: 100;
+}
+
+.presentation-footer > div.left {
+  background-color: #000;
+  color: #fff;
+}
+
+.presentation-footer > div.right {
+  background-color: var(--primary-bg);
+  text-align: right;
+}
+
+.top-circle {
+  aspect-ratio: 1/1;
+  background-color: var(--primary-bg);
+  border-radius: 50%;
+  height: 250px;
+  left: 800px;
+  position: absolute;
+  top: -145px;
+}
+
+.bottom-circle {
+  aspect-ratio: 1/1;
+  background-color: var(--off-white);
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: none;
+  height: 250px;
+  left: -100px;
+  position: absolute;
+  top: 300px;
+}

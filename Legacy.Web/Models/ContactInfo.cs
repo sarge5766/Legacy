@@ -7,5 +7,7 @@
         public string? City { get; set; }
         public string?  State { get; set; }
         public string?  Zipcode { get; set; }
+
+        public List<SocialLink> SocialLinks { get; set; } = new List<SocialLink>();
     }
 }

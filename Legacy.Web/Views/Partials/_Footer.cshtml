@@ -25,11 +25,14 @@
         @* &copy; 2024 - @ViewData["SiteTitle"] - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
     </div>
     <div>
-        <p>social media</p>
-        <ul>
-            <li><a href="#" class="facebook-blue"><i class="fa-brands fa-facebook facebook-blue"></i> Facebook</a></li>
-            <li><a href="#" class="twitter-blue"><i class="fa-brands fa-twitter twitter-blue"></i> Twitter</a></li>
-        </ul>
+        @if(Model.SocialLinks != null) {
+            <p>social media</p>
+            <ul>
+                @foreach (var item in Model.SocialLinks) {
+                    <li><a href="@item.Url" class="@item.Name.ToLower()-blue"><i class="fa-brands fa-@item.Name.ToLower() @item.Name.ToLower()-blue"></i> @item.Name</a></li>
+                }
+            </ul>
+        }
     </div>
     <div>
        <partial name="~/Views/Partials/_Footer_ContactUs.cshtml" model="Model" />

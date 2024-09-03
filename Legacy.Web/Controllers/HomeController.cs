@@ -1,5 +1,6 @@
 using Legacy.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
 
 namespace Legacy.Web.Controllers {
@@ -10,6 +11,17 @@ namespace Legacy.Web.Controllers {
         public HomeController(ILogger<HomeController> logger, IConfiguration configuration) {
             _logger = logger;
             _configuration = configuration;
+        }
+
+        public IActionResult Navbar() {
+            var contactInfo = GetContactInfo();
+
+            ViewData["Title"] = "About Us";
+            ViewData["SiteTitle"] = _configuration.GetValue<string>("SiteTitle");
+            ViewData["CompanyName"] = _configuration.GetValue<string>("CompanyName");
+
+
+            return View(contactInfo);
         }
 
         public IActionResult AboutUs() {
@@ -76,6 +88,26 @@ namespace Legacy.Web.Controllers {
             var contactInfo = GetContactInfo();
 
             ViewData["Title"] = "Our Mission";
+            ViewData["SiteTitle"] = _configuration.GetValue<string>("SiteTitle");
+            ViewData["CompanyName"] = _configuration.GetValue<string>("CompanyName");
+
+            return View(contactInfo);
+        }
+
+        public IActionResult Presentation() {
+            var contactInfo = GetContactInfo();
+
+            ViewData["Title"] = "Presentation";
+            ViewData["SiteTitle"] = _configuration.GetValue<string>("SiteTitle");
+            ViewData["CompanyName"] = _configuration.GetValue<string>("CompanyName");
+
+            return View(contactInfo);
+        }
+
+        public IActionResult PresentationPageTwo() {
+            var contactInfo = GetContactInfo();
+
+            ViewData["Title"] = "Presentation";
             ViewData["SiteTitle"] = _configuration.GetValue<string>("SiteTitle");
             ViewData["CompanyName"] = _configuration.GetValue<string>("CompanyName");
 
@@ -156,6 +188,19 @@ namespace Legacy.Web.Controllers {
                 State = _configuration.GetValue<string>("ContactInfo:State"),
                 Zipcode = _configuration.GetValue<string>("ContactInfo:Zipcode")
             };
+
+            contactInfo.SocialLinks.Add(new SocialLink {
+                Name = "Facebook",
+                Url = _configuration.GetSection("SocialMediaLinks").GetSection("Facebook").Value
+            });
+
+            contactInfo.SocialLinks.Add(new SocialLink {
+                Name = "Twitter",
+                Url = _configuration.GetSection("SocialMediaLinks").GetSection("Twitter").Value
+            });
+
+            //var facebook = _configuration.GetSection("SocialMediaLinks").GetSection("Facebook").Value;
+            //var twitter = _configuration.GetSection("SocialMediaLinks").GetSection("Twitter").Value;
 
             return contactInfo;
         }
